@@ -43,10 +43,10 @@ const Navbar = () => {
           </div>
           <div className="flex flex-col leading-tight">
             <span className={`font-bold text-base tracking-tight transition-colors duration-300 ${scrolled ? 'text-neutral-dark' : 'text-white'}`}>
-              Sanjivani
+              Sanjivani Chemicals
             </span>
-            <span className={`text-[11px] tracking-widest uppercase font-medium transition-colors duration-300 ${scrolled ? 'text-industrial-green' : 'text-accent-amber'}`}>
-              Chemical Division
+            <span className={`text-[10px] tracking-wide font-medium transition-colors duration-300 ${scrolled ? 'text-industrial-green' : 'text-accent-amber'}`}>
+              Subsidiary of Sanjivani Group
             </span>
           </div>
         </Link>
@@ -79,14 +79,17 @@ const Navbar = () => {
             href="https://www.sanjivanigroup.com"
             target="_blank"
             rel="noreferrer"
-            className={`hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-semibold transition-all duration-300 group ${
-              scrolled
-                ? 'border-neutral-light text-steel-blue hover:border-industrial-green/30 hover:text-industrial-green hover:bg-industrial-green/5'
-                : 'border-white/20 text-white/90 hover:border-white/40 hover:text-white hover:bg-white/10 backdrop-blur-sm'
-            }`}
+            className="h-20 flex items-center group"
+            aria-label="Sanjivani Group"
           >
-            <span>Sanjivani Group</span>
-            <ExternalLink size={14} className="opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+            <img
+              src="/Sanjivani%20Group%202(1).png"
+              alt="Sanjivani Group Logo"
+              className="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
           </a>
 
           <button
