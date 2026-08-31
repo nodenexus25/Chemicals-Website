@@ -2,8 +2,8 @@ import { Helmet } from 'react-helmet-async';
 import HeroSection from '../components/home/HeroSection';
 import AchievementStrip from '../components/home/AchievementStrip';
 import ProductGrid from '../components/home/ProductGrid';
-import SustainabilityCallout from '../components/home/SustainabilityCallout';
 import LeadershipQuote from '../components/home/LeadershipQuote';
+import SustainabilityCallout from '../components/home/SustainabilityCallout';
 import EnquiryForm from '../components/forms/EnquiryForm';
 
 const Home = () => {
@@ -20,8 +20,8 @@ const Home = () => {
       <HeroSection />
       <AchievementStrip />
       <ProductGrid />
-      <SustainabilityCallout />
       <LeadershipQuote />
+      <SustainabilityCallout />
 
       <section className="relative py-20 md:py-28 lg:py-32 overflow-hidden bg-gradient-to-br from-neutral-light via-white to-neutral-light/80">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

@@ -75,3 +75,9 @@ export const products = [
     packaging: ["25 kg Fiber Drums", "50 kg HDPE Bags", "100 kg Drums", "Custom Bulk Packaging"]
   }
 ];
+
+export const coreProduct = products.find((p) => p.slug === 'ethanol') || products[0];
+
+export const productCatalog = products;
+
+export default products;

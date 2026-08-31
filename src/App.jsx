@@ -1,8 +1,8 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -15,6 +15,10 @@ const Sustainability = lazy(() => import('./pages/Sustainability'));
 const Contact = lazy(() => import('./pages/Contact'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
+const Brand = lazy(() => import('./pages/Brand'));
+const Programs = lazy(() => import('./pages/Programs'));
+const Impact = lazy(() => import('./pages/Impact'));
+
 const Loader = () => (
   <div className="min-h-[60vh] flex items-center justify-center">
     <div className="flex flex-col items-center gap-4">
@@ -25,6 +29,17 @@ const Loader = () => (
       <p className="text-xs uppercase tracking-[0.25em] font-bold text-neutral-dark/45">Loading</p>
     </div>
   </div>
+);
+
+const PageWrapper = ({ children }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 12 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -6 }}
+    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+  >
+    {children}
+  </motion.div>
 );
 
 const ScrollToTop = () => {
@@ -49,15 +64,9 @@ const App = () => {
     <div className="min-h-screen flex flex-col bg-white text-neutral-dark antialiased selection:bg-industrial-green selection:text-white">
       <ScrollToTop />
       <Navbar />
-      <main className="flex-1 relative">
+      <main className="flex-1 relative z-0">
         <AnimatePresence mode="wait">
-          <motion.div
-            key={location.pathname}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -4 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          >
+          <PageWrapper key={location.pathname}>
             <Suspense fallback={<Loader />}>
               <Routes location={location}>
                 <Route path="/" element={<Home />} />
@@ -69,10 +78,13 @@ const App = () => {
                 <Route path="/achievements" element={<Achievements />} />
                 <Route path="/sustainability" element={<Sustainability />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/brand" element={<Brand />} />
+                <Route path="/programs" element={<Programs />} />
+                <Route path="/impact" element={<Impact />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
-          </motion.div>
+          </PageWrapper>
         </AnimatePresence>
       </main>
       <Footer />
