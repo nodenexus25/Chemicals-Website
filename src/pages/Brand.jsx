@@ -3,13 +3,12 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   Leaf, Droplets, Flame, Zap, FlaskConical,
-  ArrowUpRight, CheckCircle2, ShieldCheck,
+  ArrowUpRight, ShieldCheck,
   Award, Calendar, Factory,
 } from 'lucide-react';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import CTAButton from '../components/CTAButton';
-import AnimatedCounter from '../components/AnimatedCounter';
 import defaultImages from '../data/defaultImages.js';
 import { products, coreProduct } from '../data/products.js';
 import ProductCard from '../components/ProductCard';
@@ -18,34 +17,11 @@ const iconMap = {
   Leaf, Droplets, FlaskConical, Factory, Flame, Zap,
 };
 
-const flagships = [
-  {
-    k: 'ESJ Direct Process',
-    v: 'First in Maharashtra',
-    tone: 'from-industrial-green to-emerald-600',
-  },
-  {
-    k: 'Sugar Recovery Gain',
-    v: '+15% Efficiency',
-    tone: 'from-accent-amber to-amber-400',
-  },
-  {
-    k: 'Anhydrous Purity',
-    v: '99.9% Grade',
-    tone: 'from-steel-blue to-cyan-500',
-  },
-  {
-    k: 'BIS Certified',
-    v: 'Fuel Grade Approved',
-    tone: 'from-industrial-green to-steel-blue',
-  },
-];
-
 const promiseRows = [
   {
     icon: Droplets,
     k: 'Feedstock Traceability',
-    v: '100% traced to cooperative sugar factory — on-campus ESJ pipeline.',
+    v: '100% traced to cooperative sugar factory via on-campus ESJ pipeline.',
   },
   {
     icon: ShieldCheck,
@@ -55,12 +31,12 @@ const promiseRows = [
   {
     icon: Flame,
     k: 'Low Carbon Intensity',
-    v: 'Process heat from bio-gas, not fossil fuel — dramatically lower CI score.',
+    v: 'Bio-gas process heat replaces fossil fuel — dramatically lower CI score.',
   },
   {
     icon: Zap,
     k: 'Supply Security',
-    v: 'Integrated campus = independent feedstock, energy, and logistics.',
+    v: 'Integrated campus = independent feedstock, energy and logistics.',
   },
 ];
 
@@ -78,7 +54,7 @@ const Brand = () => {
     <>
       <SEO
         title="ESJ Ethanol — Flagship Brand | Sanjivani Chemical Division"
-        description="Maharashtra's first ESJ-to-Ethanol flagship brand. Fuel-grade & pharma-grade ethanol, 15% higher sugar recovery, circular bio-energy powered. Trusted by OMCs, pharma, and sanitizer partners."
+        description="Maharashtra's first ESJ-to-Ethanol flagship. Fuel + pharma grade ethanol, +15% sugar recovery, circular bio-energy powered. Trusted by OMCs and pharma."
         keywords="ESJ ethanol brand, Maharashtra flagship ethanol, Sanjivani ethanol brand, fuel grade ethanol supplier, pharma grade excipient ethanol India"
         path="/brand"
       />
@@ -89,7 +65,7 @@ const Brand = () => {
       <PageHeader
         eyebrow="Flagship Brand"
         title="ESJ Ethanol — The renewable fuel that started it all."
-        subtitle="Pioneered in Maharashtra. Powered directly by Enzymatic Sugar Juice. Supplied to OMCs, pharma partners, and emergency response programs. This is the flagship process that put Sanjivani Chemical Division on India's renewable chemistry map."
+        subtitle="Maharashtra-pioneered Enzymatic Sugar Juice ethanol. Supplied to OMCs, pharma and emergency response. The flagship process that put Sanjivani on India's renewable chemistry map."
         breadcrumbItems={[{ label: 'Flagship Brand' }]}
         bgImage={defaultImages.pageHeaders.products}
         accent="green"
@@ -118,58 +94,18 @@ const Brand = () => {
                 </h2>
                 <div className="space-y-5 text-neutral-dark/70 leading-relaxed">
                   <p>
-                    Conventional ethanol routes require sugar crystallization first — then re-melting and re-processing
-                    sugar back into fermentation feedstock. In 2019, Sanjivani became the first cooperative sugar factory
-                    in Maharashtra to bypass that entire step, channeling Enzymatic Sugar Juice directly into continuous
-                    hydrolysis and fermentation.
+                    Conventional ethanol requires sugar crystallization first, then re-melting and re-processing sugar
+                    back into feedstock. In 2019, Sanjivani became Maharashtra's first cooperative sugar factory to
+                    bypass that step entirely — channeling Enzymatic Sugar Juice straight into continuous hydrolysis and fermentation.
                   </p>
                   <p>
-                    The result: <span className="font-semibold text-neutral-dark">15% higher sugar recovery per tonne
-                    of cane</span>, shorter production cycles, dramatically lower specific energy consumption, and a
-                    finished fuel-grade ethanol with one of the lowest carbon-intensity scores in India's cooperative sector.
+                    Result: <span className="font-semibold text-neutral-dark">+15% sugar recovery per tonne of cane</span>,
+                    shorter production cycles, lower specific energy consumption, and fuel-grade ethanol with one of India's cooperative sector's lowest carbon-intensity scores.
                   </p>
                   <p>
-                    Our ESJ ethanol powers the national Ethanol Blended Petrol (EBP) program, serves as feedstock for
-                    pharma-grade excipient alcohol, and became the backbone of India's largest cooperative-sector hand
-                    sanitizer production during the 2020 national emergency.
+                    ESJ ethanol powers the national Ethanol Blended Petrol (EBP) program, supplies pharma-grade excipient alcohol, and anchored 2020's largest cooperative-sector sanitizer production initiative.
                   </p>
                 </div>
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
-                {flagships.map((f, i) => (
-                  <motion.div
-                    key={f.k}
-                    initial={{ opacity: 0, y: 18 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.55, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-                    className="group relative p-5 md:p-6 rounded-3xl bg-white border border-neutral-light shadow-card hover:shadow-card-hover transition-all duration-500 hover:-translate-y-0.5 overflow-hidden"
-                  >
-                    <div className={`absolute -top-10 -right-10 w-28 h-28 rounded-full bg-gradient-to-br ${f.tone} opacity-15 group-hover:opacity-25 transition-opacity duration-500`} />
-                    <p className="relative text-xs uppercase tracking-wider font-bold text-neutral-dark/45 mb-2">{f.k}</p>
-                    <p className="relative text-lg md:text-xl font-black tracking-tight bg-gradient-to-br from-industrial-green to-steel-blue bg-clip-text text-transparent leading-tight">
-                      {f.v}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-4 md:gap-5 max-w-2xl pt-4">
-                {[
-                  { n: '2019', l: 'ESJ Innovation Year' },
-                  { n: '5M+', l: 'Sanitizer Units · 2020' },
-                  { n: '99.9%', l: 'Anhydrous Purity' },
-                ].map((s, i) => (
-                  <div key={i} className="space-y-1">
-                    <p className="text-2xl md:text-3xl font-black tracking-tight text-industrial-green">
-                      <AnimatedCounter value={s.n} />
-                    </p>
-                    <p className="text-[11px] uppercase tracking-wider text-neutral-dark/45 font-bold leading-tight">
-                      {s.l}
-                    </p>
-                  </div>
-                ))}
               </div>
             </motion.div>
 
@@ -347,21 +283,6 @@ const Brand = () => {
                   Explore ESJ Plant Detail
                   <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
-              </div>
-            </div>
-            <div className="md:col-span-4">
-              <div className="grid grid-cols-2 gap-4 md:gap-5">
-                {[
-                  { l: 'BIS Certified', v: '✓' },
-                  { l: 'cGMP Grade', v: '✓' },
-                  { l: 'EBP Program', v: '✓' },
-                  { l: 'Tank Truck · Rail', v: '✓' },
-                ].map((s, i) => (
-                  <div key={i} className="p-5 md:p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10">
-                    <CheckCircle2 size={20} className="text-accent-amber mb-3" />
-                    <p className="text-sm font-semibold text-white leading-tight">{s.l}</p>
-                  </div>
-                ))}
               </div>
             </div>
           </div>

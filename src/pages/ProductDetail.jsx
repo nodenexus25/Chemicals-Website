@@ -148,21 +148,8 @@ const ProductDetail = () => {
               <EnquiryForm
                 variant="card"
                 title={`Request a quote for ${product.name}`}
-                subtitle="Share grade, quantity, and delivery location. Our sales desk responds within one business day with COA samples, pricing, and logistics options."
+                subtitle="Share grade, quantity, delivery location. Sales desk replies within one business day with CoA, pricing, logistics."
               />
-
-              <div className="mt-6 md:mt-7 grid grid-cols-3 gap-3 md:gap-4">
-                {[
-                  { v: '24h', l: 'Quote Response' },
-                  { v: 'Truck / Rail', l: 'Pan-India Delivery' },
-                  { v: 'CoA + MSDS', l: 'Docs Included' },
-                ].map((s, i) => (
-                  <div key={i} className="p-4 rounded-2xl bg-white border border-neutral-light shadow-card text-center">
-                    <p className="text-sm md:text-base font-black tracking-tight text-industrial-green leading-tight">{s.v}</p>
-                    <p className="text-[10px] md:text-[11px] uppercase tracking-wider text-neutral-dark/45 font-semibold mt-1.5 leading-tight">{s.l}</p>
-                  </div>
-                ))}
-              </div>
             </motion.div>
           </div>
 

@@ -1,19 +1,30 @@
 import { motion } from 'framer-motion';
 import * as LucideIcons from 'lucide-react';
 
+const timelineImages = [
+  '/timeline/1.png',
+  '/timeline/2.png',
+  '/timeline/3.png',
+  '/timeline/4.png',
+  '/timeline/5.png',
+  '/timeline/6.png',
+  '/timeline/7.png',
+];
+
 const Timeline = ({ items }) => {
   return (
-    <div className="relative max-w-5xl mx-auto">
+    <div className="relative max-w-6xl mx-auto">
       <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-industrial-green/10 via-industrial-green/40 to-industrial-green/10 md:-translate-x-px" />
 
       <ol className="space-y-10 md:space-y-16">
         {items.map((item, index) => {
           const Icon = LucideIcons[item.icon] || LucideIcons.Circle;
           const isLeft = index % 2 === 0;
+          const imageSrc = timelineImages[index % timelineImages.length];
 
           return (
-            <li key={index} className="relative md:grid md:grid-cols-2 md:gap-10 lg:gap-16">
-              <div className={`md:pb-4 ${isLeft ? 'md:pr-6 md:text-right md:col-start-1' : 'md:pl-6 md:col-start-2 md:row-start-1'}`}>
+            <li key={index} className="relative md:grid md:grid-cols-2 md:gap-10 lg:gap-16 items-center">
+              <div className={`md:pb-4 ${isLeft ? 'md:pr-6 md:text-right md:col-start-1 md:row-start-1' : 'md:pl-6 md:col-start-2 md:row-start-1'}`}>
                 <motion.div
                   initial={{ opacity: 0, y: 30, x: isLeft ? -30 : 30 }}
                   whileInView={{ opacity: 1, y: 0, x: 0 }}
@@ -35,14 +46,28 @@ const Timeline = ({ items }) => {
                 </motion.div>
               </div>
 
-              <div className="hidden md:block" aria-hidden />
+              <div className={`pl-16 md:pl-0 mt-8 md:mt-0 ${isLeft ? 'md:col-start-2 md:row-start-1 md:pl-6' : 'md:col-start-1 md:row-start-1 md:pr-6 md:text-right'}`}>
+                <motion.img
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.65, delay: index * 0.05 + 0.12, ease: [0.22, 1, 0.36, 1] }}
+                  src={imageSrc}
+                  alt={`${item.year} - ${item.label}`}
+                  loading="lazy"
+                  className={`w-full h-auto object-cover max-w-full md:max-w-md ${isLeft ? 'md:mr-0' : 'md:ml-auto'}`}
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </div>
 
               <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 + 0.1, type: 'spring', stiffness: 200 }}
-                className={`absolute left-6 md:left-1/2 top-0 md:top-2 -translate-x-1/2 flex flex-col items-center`}
+                className={`absolute left-6 md:left-1/2 top-0 md:top-6 -translate-x-1/2 flex flex-col items-center`}
               >
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white shadow-card-hover border-4 border-white flex items-center justify-center text-industrial-green">
                   <Icon size={20} strokeWidth={2.2} />

@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import PageHeader from '../components/layout/PageHeader';
 import EnquiryForm from '../components/forms/EnquiryForm';
 import {
-  MapPin, Phone, Mail, Clock, Globe2,
+  MapPin, Phone, Mail, Clock,
   Share2, Globe, Users, Send,
-  Truck, FileCheck, Headphones, Factory
+  Truck, FileCheck, Factory
 } from 'lucide-react';
 import defaultImages from '../data/defaultImages';
 
@@ -30,25 +30,18 @@ const contactDetails = [
   },
 ];
 
-const quickFacts = [
-  { v: '24h', l: 'Quote Response', icon: Headphones },
-  { v: 'Pan-India', l: 'Truck / Rail Delivery', icon: Truck },
-  { v: '8+', l: 'Export Countries', icon: Globe2 },
-  { v: 'ISO', l: '9001 · 14001 · 50001', icon: FileCheck },
-];
-
 const Contact = () => {
   return (
     <>
       <Helmet>
         <title>Contact Us | Sanjivani Chemical Division — Maharashtra</title>
-        <meta name="description" content="Contact Sanjivani Chemical Division for ethanol, acetic anhydride, ethyl acetate, bulk drugs & custom chemical enquiries. Plant location in Kopargaon, Ahmednagar, Maharashtra." />
+        <meta name="description" content="Contact Sanjivani Chemical Division for ethanol, acetic anhydride, ethyl acetate, bulk drugs enquiries. Kopargaon plant, Ahmednagar, Maharashtra." />
         <meta name="keywords" content="Sanjivani Chemical contact, ethanol supplier Mumbai, chemical B2B enquiry Maharashtra, Kopargaon chemical plant address" />
       </Helmet>
 
       <PageHeader
         title="Let's build a long-term supply partnership."
-        subtitle="Share your grade, quantity, and delivery timeline. Our B2B sales desk — based in the Kopargaon plant campus — responds within 24 hours with quotes, specification sheets, and logistics options."
+        subtitle="Share grade, quantity and delivery timeline. Kopargaon plant-based B2B sales desk responds within 24 hours with quotes, spec sheets and logistics options."
         breadcrumbItems={[{ label: 'Contact' }]}
         accent="blue"
         bgImage={defaultImages.pageHeaders.contact}
@@ -85,28 +78,6 @@ const Contact = () => {
                       ))}
                     </address>
                   </div>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 mb-16 md:mb-20">
-            {quickFacts.map((q, i) => {
-              const Icon = q.icon;
-              return (
-                <motion.div
-                  key={q.l}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.05 }}
-                  className="p-5 md:p-6 rounded-3xl bg-neutral-light/60 border border-neutral-light text-center hover:bg-white hover:shadow-card transition-all duration-300"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-white mx-auto flex items-center justify-center text-industrial-green shadow-sm mb-3.5">
-                    <Icon size={18} strokeWidth={2.2} />
-                  </div>
-                  <p className="text-xl md:text-2xl font-black tracking-tight text-neutral-dark">{q.v}</p>
-                  <p className="text-[11px] uppercase tracking-wider text-neutral-dark/45 font-semibold mt-1 leading-tight">{q.l}</p>
                 </motion.div>
               );
             })}
@@ -239,7 +210,7 @@ const Contact = () => {
               <EnquiryForm
                 variant="card"
                 title="Send an Enquiry"
-                subtitle="Tell us about your product, grade, packaging, and destination. We respond within 24 hours with commercial offer, COA samples, and logistics options."
+                subtitle="Share your product, grade, packaging, destination. 24-hour response with offer, CoA samples, and logistics."
               />
             </motion.div>
           </div>

@@ -2,17 +2,17 @@ import { achievements } from './achievements.js';
 import { plants } from './plants.js';
 
 export const stats = [
-  { id: 1, value: '38+', suffix: '', prefix: '', label: 'Years of Operation', description: 'Continuous industrial heritage since 1985' },
-  { id: 2, value: '7', suffix: '', prefix: '', label: 'Specialized Plants', description: 'Integrated on single 200+ acre campus' },
-  { id: 3, value: '50,000+', suffix: '', prefix: '', label: 'Farmer Members', description: '100% cooperative-owned by Maharashtra cane farmers' },
-  { id: 4, value: '12', suffix: ' MW', prefix: '', label: 'Co-Gen Capacity', description: 'Surplus renewable power exported seasonally' },
-  { id: 5, value: '25,000+', suffix: ' T', prefix: '', label: 'CO₂ Offset / yr', description: 'Via circular bio-energy ecosystem' },
-  { id: 6, value: '200+', suffix: '', prefix: '', label: 'B2B Clients', description: 'Pharma, paints, textiles & fuels across India' },
+  { id: 1, value: '38+', suffix: '', prefix: '', label: 'Years of Operation', description: 'Continuous heritage since 1985' },
+  { id: 2, value: '7', suffix: '', prefix: '', label: 'Specialized Plants', description: 'Single 200+ acre integrated campus' },
+  { id: 3, value: '50,000+', suffix: '', prefix: '', label: 'Farmer Members', description: '100% Maharashtra cooperative-owned' },
+  { id: 4, value: '12', suffix: ' MW', prefix: '', label: 'Co-Gen Capacity', description: 'Seasonal renewable grid export' },
+  { id: 5, value: '25,000+', suffix: ' T', prefix: '', label: 'CO₂ Offset / yr', description: 'Circular bio-energy ecosystem' },
+  { id: 6, value: '200+', suffix: '', prefix: '', label: 'B2B Clients', description: 'Pharma, paints, textiles, fuels' },
 ];
 
 export const ecosystemFlow = {
   title: 'Circular Energy Flow',
-  description: 'From sugarcane field to product delivery — every by-product becomes a resource in our 4-step integrated bio-refinery model.',
+  description: 'Sugarcane field to product delivery — every by-product cycles back into our 4-step integrated bio-refinery model.',
   flow: [
     { step: 1, label: 'Enzymatic Sugar Juice', icon: 'Droplets', detail: 'Direct from on-site sugar factory', accent: 'from-cyan-500 to-steel-blue' },
     { step: 2, label: 'Ethanol Distillation', icon: 'Leaf', detail: 'ESJ → Fuel Grade + Pharma Grade', accent: 'from-industrial-green to-emerald-600' },

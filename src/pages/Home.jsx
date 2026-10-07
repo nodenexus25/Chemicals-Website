@@ -11,10 +11,10 @@ const Home = () => {
     <>
       <Helmet>
         <title>Sanjivani Chemical Division | Ethanol, Bulk Drugs & Organic Chemicals — Maharashtra</title>
-        <meta name="description" content="Maharashtra's pioneering integrated chemical manufacturer — ethanol from ESJ, acetic anhydride, ethyl acetate, bulk drugs, powered by circular bio-energy. B2B supplier to pharma, paints & fuel sectors." />
+        <meta name="description" content="Maharashtra's first integrated ESJ ethanol + specialty chemical manufacturer. 7 plants, 38+ years, circular bio-energy powered." />
         <meta name="keywords" content="ethanol manufacturer Maharashtra, acetic anhydride supplier India, bulk drugs manufacturer, ethanol from ESJ, ethyl acetate supplier, Sanjivani Chemical" />
         <meta property="og:title" content="Sanjivani Chemical Division | Integrated Chemical Manufacturer" />
-        <meta property="og:description" content="Ethanol, bulk drugs & specialty chemicals — Maharashtra's first ESJ-to-ethanol producer. 38+ years of cooperative industrial heritage." />
+        <meta property="og:description" content="Ethanol, bulk drugs & specialty chemicals. Maharashtra's first ESJ-to-ethanol producer, 38+ years cooperative heritage." />
       </Helmet>
 
       <HeroSection />
@@ -35,8 +35,7 @@ const Home = () => {
                 Ready to source with confidence?
               </h2>
               <p className="text-base md:text-lg text-neutral-dark/65 leading-relaxed mb-8">
-                Share your grade, quantity & delivery requirements. Our B2B sales team responds within 24 hours with
-                competitive pricing, specification sheets, and logistics options.
+                Share grade, quantity & delivery timelines. Our B2B sales team responds within 24 hours with pricing, spec sheets and logistics options.
               </p>
               <div className="space-y-4 p-5 md:p-6 rounded-3xl bg-white border border-neutral-light shadow-card">
                 {[

@@ -12,26 +12,22 @@ const pillars = [
   {
     icon: Factory,
     title: 'Manufacturing Excellence',
-    desc: '7 specialized plants with 38+ years of continuous operational refinement. Continuous process automation, on-site NABL testing, and zero-discharge effluent systems.',
-    stats: [{ v: '7', l: 'Plants' }, { v: '38+', l: 'Years Ops' }],
+    desc: '7 specialized plants, 38+ years continuous refinement. Process automation, on-site NABL testing, zero-discharge effluent systems.',
   },
   {
     icon: Users,
     title: 'Cooperative Stewardship',
-    desc: 'Owned by 50,000+ farmer members. Every tonne of chemical we produce returns multiplied prosperity to Maharashtra’s cane-growing communities through dividends, premiums & infrastructure.',
-    stats: [{ v: '50K+', l: 'Farmers' }, { v: '100%', l: 'Farmer-owned' }],
+    desc: 'Owned by 50,000+ farmer members. Every tonne manufactured returns multiplied cane-community prosperity via dividends, premiums & infrastructure.',
   },
   {
     icon: Leaf,
     title: 'Circular Sustainability',
-    desc: 'Zero organic residue discard. Sugar juice → ethanol → residues → bio-gas → power & process heat. Maharashtra’s benchmark for integrated bio-refinery cooperatives.',
-    stats: [{ v: '100%', l: 'Waste Reused' }, { v: '25K T', l: 'CO₂ / yr' }],
+    desc: 'Zero organic discard. Sugar juice → ethanol → residues → bio-gas → power + process heat. Maharashtra bio-refinery benchmark.',
   },
   {
     icon: Award,
     title: 'Regulatory & Quality',
-    desc: 'ISO 9001, ISO 14001 & ISO 50001 certified. BIS-approved ethanol, REACH-compliant specialty chemicals, and cGMP bulk drug operations with pharma-grade validation.',
-    stats: [{ v: '8+', l: 'Certifications' }, { v: 'cGMP', l: 'Pharma Grade' }],
+    desc: 'ISO 9001 · 14001 · 50001 certified. BIS-approved ethanol, REACH-compliant specialty chemicals, cGMP pharma-grade validation.',
   },
 ];
 
@@ -46,7 +42,7 @@ const About = () => {
 
       <PageHeader
         title="A cooperative heritage, engineered into industrial leadership."
-        subtitle="Founded in the cooperative ethos of Maharashtra's sugar heartland, Sanjivani Chemical Division is a farmer-owned industrial enterprise that has evolved into one of the state's most diversified and sustainable chemical manufacturing ecosystems."
+        subtitle="Farmer-owned Maharashtra industrial enterprise — evolved from a single 1985 plant into the state's most diversified sustainable chemical ecosystem."
         breadcrumbItems={[{ label: 'About' }]}
         bgImage={defaultImages.pageHeaders.about}
       />
@@ -70,36 +66,17 @@ const About = () => {
               </h2>
               <div className="space-y-5 text-neutral-dark/70 leading-relaxed">
                 <p>
-                  Sanjivani Chemical Division is the industrial arm of the Sanjivani Group — one of Maharashtra's most
-                  respected farmer cooperatives headquartered at Shingnapur, Kopargaon. What began in 1985 with a
-                  single Ethyl Acetate plant has grown into a 7-plant integrated chemical manufacturing ecosystem that
-                  today supplies ethanol, specialty organic chemicals, and bulk drugs to 200+ industrial buyers across
-                  India and 8+ export markets.
+                  Sanjivani Chemical Division is the industrial arm of Sanjivani Group — Maharashtra's respected
+                  Shingnapur, Kopargaon farmer cooperative. From a single 1985 Ethyl Acetate plant into a 7-plant
+                  integrated ecosystem supplying ethanol, specialty chemicals and bulk drugs to 200+ buyers across India + 8 export markets.
                 </p>
                 <p>
-                  Our defining competitive advantage is vertical integration. Because we share the campus with our own
-                  sugar factory, we have direct access to Enzymatic Sugar Juice — the feedstock for our pioneering
-                  ESJ-to-Ethanol process. Every downstream residue from the chemical plants then feeds our Bio-Gas,
-                  Sulphur Recovery, and 12 MW Co-Generation divisions.
+                  Our competitive edge is vertical integration. Shared campus with our own sugar factory gives direct
+                  Enzymatic Sugar Juice access for our pioneering ESJ-to-Ethanol process. Downstream residues feed Bio-Gas, Sulphur Recovery and 12 MW Co-Generation divisions.
                 </p>
                 <p>
-                  The result: a <span className="font-semibold text-neutral-dark">farmer-owned circular bio-refinery</span>{' '}
-                  — the first in Maharashtra — that delivers consistent quality, competitive pricing, and a dramatically
-                  lower carbon footprint than comparable standalone chemical manufacturers.
+                  The result: Maharashtra's first farmer-owned circular bio-refinery — consistent quality, competitive pricing, and a materially lower carbon footprint than standalone chemical manufacturers.
                 </p>
-              </div>
-
-              <div className="mt-8 grid grid-cols-3 gap-4 md:gap-5 max-w-md pt-6 border-t border-neutral-light">
-                {[
-                  { v: '1985', l: 'Founded' },
-                  { v: '7', l: 'Plants' },
-                  { v: '12MW', l: 'Co-Gen' },
-                ].map((s, i) => (
-                  <div key={i} className="space-y-1">
-                    <p className="text-2xl md:text-3xl font-black tracking-tight text-industrial-green">{s.v}</p>
-                    <p className="text-[11px] uppercase tracking-wider text-neutral-dark/45 font-semibold">{s.l}</p>
-                  </div>
-                ))}
               </div>
             </motion.div>
 
@@ -165,17 +142,9 @@ const About = () => {
                 >
                   <div className="absolute top-0 right-0 w-52 h-52 bg-gradient-to-br from-industrial-green/5 via-accent-amber/5 to-transparent rounded-full -translate-y-24 translate-x-24 opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative">
-                    <div className="flex items-start justify-between mb-6">
+                    <div className="mb-6">
                       <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-industrial-green to-steel-blue flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform duration-400">
                         <Icon size={28} strokeWidth={2.1} />
-                      </div>
-                      <div className="grid grid-cols-2 gap-4 md:gap-5">
-                        {p.stats.map((s, j) => (
-                          <div key={j} className="text-right">
-                            <p className="text-xl md:text-2xl font-black tracking-tight text-industrial-green">{s.v}</p>
-                            <p className="text-[10px] uppercase tracking-wider text-neutral-dark/45 font-semibold mt-0.5 leading-tight">{s.l}</p>
-                          </div>
-                        ))}
                       </div>
                     </div>
                     <h3 className="text-xl md:text-2xl font-bold tracking-tight text-neutral-dark mb-3">{p.title}</h3>
@@ -199,8 +168,7 @@ const About = () => {
               Four decades of firsts.
             </h2>
             <p className="text-base md:text-lg text-neutral-dark/65 leading-relaxed">
-              From our first Ethyl Acetate reactor in 1985 to pioneering ESJ ethanol — each milestone below represents
-              a commitment to farmer prosperity, industrial excellence, and environmental leadership.
+              From 1985's first Ethyl Acetate reactor to pioneering ESJ ethanol — each milestone marks progress for farmer prosperity, industrial excellence and environmental leadership.
             </p>
           </div>
           <Timeline items={timeline} />
@@ -220,8 +188,7 @@ const About = () => {
                 Part of Sanjivani Group — serving Maharashtra since 1969.
               </h2>
               <p className="text-base md:text-lg text-white/75 leading-relaxed max-w-2xl mb-8">
-                The Sanjivani Group encompasses sugar, distillery, chemicals, co-generation, dairy, education &
-                healthcare — serving 50,000+ farmer members across Ahmednagar district and beyond.
+                Sanjivani Group: sugar, distillery, chemicals, co-generation, dairy, education & healthcare — serving 50,000+ farmer members across Ahmednagar district.
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <CTAButton href="https://www.sanjivanigroup.com" variant="primary" size="md">
@@ -231,24 +198,6 @@ const About = () => {
                   Explore 7 Manufacturing Plants
                   <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
-              </div>
-            </div>
-            <div className="lg:col-span-5">
-              <div className="grid grid-cols-2 gap-4 md:gap-5">
-                {[
-                  { l: 'Sugar', v: '5000 TCD' },
-                  { l: 'Chemicals', v: '7 Plants' },
-                  { l: 'Co-Gen', v: '12 MW' },
-                  { l: 'Education', v: '8 Institutes' },
-                ].map((s, i) => (
-                  <div
-                    key={i}
-                    className="p-5 md:p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:bg-white/10 transition-all duration-300"
-                  >
-                    <p className="text-2xl md:text-3xl font-black tracking-tight text-accent-amber mb-1">{s.v}</p>
-                    <p className="text-[11px] uppercase tracking-wider text-white/60 font-semibold">{s.l}</p>
-                  </div>
-                ))}
               </div>
             </div>
           </div>

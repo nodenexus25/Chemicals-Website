@@ -62,8 +62,7 @@ const SustainabilityCallout = () => {
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-6 text-base md:text-lg text-white/75 leading-relaxed max-w-lg"
             >
-              Our integrated process turns sugar juice into ethanol, organic residues into bio-gas, and bio-gas into
-              process steam & grid power. Less waste. Lower emissions. Higher value for farmers, buyers & the planet.
+              Sugar juice → ethanol → residues → bio-gas → process steam + grid power. Less waste. Lower emissions. Higher value for farmers, buyers and the planet.
             </motion.p>
 
             <motion.div
@@ -71,25 +70,6 @@ const SustainabilityCallout = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-8 grid grid-cols-3 gap-4 md:gap-6 max-w-md"
-            >
-              {[
-                { v: '25K+', l: 'Tons CO₂ / yr' },
-                { v: '100%', l: 'Bio-gas Used' },
-                { v: '12 MW', l: 'Co-Gen Power' },
-              ].map((s, i) => (
-                <div key={i} className="space-y-1">
-                  <p className="text-2xl md:text-3xl font-black tracking-tight text-accent-amber">{s.v}</p>
-                  <p className="text-[11px] md:text-xs uppercase tracking-wider text-white/60 font-semibold leading-tight">{s.l}</p>
-                </div>
-              ))}
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.28 }}
               className="mt-10 flex flex-wrap items-center gap-4"
             >
               <CTAButton to="/sustainability" variant="primary" size="md">

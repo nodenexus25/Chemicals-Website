@@ -4,8 +4,19 @@ import PageHeader from '../components/layout/PageHeader';
 import AchievementCard from '../components/shared/AchievementCard';
 import CTAButton from '../components/shared/CTAButton';
 import { achievements, certifications } from '../data/achievements';
-import { Award, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { ShieldCheck, Award } from 'lucide-react';
 import defaultImages from '../data/defaultImages';
+
+const certificationImages = [
+  '/certifications/Screenshot 2026-10-07 122249.png',
+  '/certifications/Screenshot 2026-10-07 122258.png',
+  '/certifications/Screenshot 2026-10-07 122308.png',
+  '/certifications/Screenshot 2026-10-07 122314.png',
+  '/certifications/Screenshot 2026-10-07 122324.png',
+  '/certifications/Screenshot 2026-10-07 122331.png',
+  '/certifications/Screenshot 2026-10-07 122343.png',
+  '/certifications/Screenshot 2026-10-07 122356.png',
+];
 
 const Achievements = () => {
   return (
@@ -17,10 +28,11 @@ const Achievements = () => {
       </Helmet>
 
       <PageHeader
-        title="A history of firsts, in service of Maharashtra."
-        subtitle="Every achievement below represents a milestone where Sanjivani Chemical Division raised the bar — for cooperatives, for Maharashtra industry, and for sustainable manufacturing in India."
+        title="Industry firsts, built on cooperative heritage."
+        subtitle="Milestones where Sanjivani Chemical raised the bar — for Maharashtra cooperatives, for Indian industry, and for sustainable manufacturing."
         breadcrumbItems={[{ label: 'Achievements' }]}
         bgImage={defaultImages.pageHeaders.achievements}
+        accent="amber"
       />
 
       <section className="py-20 md:py-28 lg:py-32">
@@ -49,34 +61,43 @@ const Achievements = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
-            {certifications.map((c, i) => (
-              <motion.div
-                key={c.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.55, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative bg-white rounded-3xl p-6 md:p-7 border border-neutral-light shadow-card hover:shadow-card-hover transition-all duration-400 hover:-translate-y-0.5 overflow-hidden"
-              >
-                <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-gradient-to-br from-industrial-green/10 to-steel-blue/10 opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br from-industrial-green to-steel-blue flex items-center justify-center text-white shadow-lg mb-5 group-hover:scale-105 transition-transform duration-300">
-                    <Award size={24} strokeWidth={2.1} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+            {certifications.map((c, i) => {
+              const imgSrc = certificationImages[i % certificationImages.length];
+              return (
+                <motion.div
+                  key={c.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.55, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                  className="group relative bg-white rounded-3xl border border-neutral-light shadow-card hover:shadow-card-hover transition-all duration-400 hover:-translate-y-0.5 overflow-hidden"
+                >
+                  <div className="aspect-[40/39] w-full overflow-hidden bg-neutral-light/70">
+                    <img
+                      src={imgSrc}
+                      alt={`${c.name} certification`}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        const parent = e.currentTarget.parentElement;
+                        if (parent && !parent.querySelector('.cert-fallback')) {
+                          const fb = document.createElement('div');
+                          fb.className = 'cert-fallback w-full h-full flex items-center justify-center';
+                          fb.innerHTML = `
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-industrial-green to-steel-blue flex items-center justify-center text-white shadow-md">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                            </div>
+                          `;
+                          parent.appendChild(fb);
+                        }
+                      }}
+                    />
                   </div>
-                  <p className="text-lg md:text-xl font-black tracking-tight text-neutral-dark mb-1.5 leading-tight">
-                    {c.name}
-                  </p>
-                  <p className="text-xs md:text-sm text-neutral-dark/55 font-semibold uppercase tracking-wider mt-1">
-                    {c.category}
-                  </p>
-                  <div className="mt-5 pt-4 border-t border-neutral-light flex items-center gap-2 text-xs font-semibold text-industrial-green">
-                    <CheckCircle2 size={13} strokeWidth={3} />
-                    Valid & Current
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -184,7 +184,7 @@ const PlantDetail = () => {
                 <EnquiryForm
                   variant="card"
                   title={`Enquire about ${plant.name}`}
-                  subtitle="Share your product requirement, feedstock or off-take interest. Our plant-level technical team will respond within one business day."
+                  subtitle="Share requirements, feedstock or off-take interest. Plant team responds within one business day."
                 />
               </div>
             </motion.div>

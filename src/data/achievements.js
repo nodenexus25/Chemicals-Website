@@ -2,56 +2,32 @@ export const achievements = [
   {
     icon: "Award",
     title: "First in Maharashtra",
-    description: "First to manufacture ethanol directly from Enzymatic Sugar Juice (ESJ), pioneering renewable fuel production in the state and setting a benchmark for the Indian sugar industry's transition to bio-energy.",
-    stats: [
-      { label: "Year of Innovation", value: "2019" },
-      { label: "Efficiency Gain", value: "+15%" }
-    ]
+    description: "First cooperative to manufacture ethanol directly from Enzymatic Sugar Juice (ESJ). Pioneered renewable fuel economics for Maharashtra's sugar industry transition to bio-energy.",
   },
   {
     icon: "Droplets",
     title: "Largest Hand Sanitizer Producer",
-    description: "Largest producer and seller of Ethanol-based Hand Sanitizer in the cooperative sector, stepping up during national emergencies to ensure hygiene supplies reached communities across rural and urban Maharashtra.",
-    stats: [
-      { label: "Units Produced", value: "5M+" },
-      { label: "Communities Served", value: "30+" }
-    ]
+    description: "Cooperative sector's largest ethanol-based hand sanitizer manufacturer. Scaled to emergency levels during national crises to supply hygiene kits to rural + urban Maharashtra communities.",
   },
   {
     icon: "Users",
     title: "Pioneering Leadership",
-    description: "Under the visionary stewardship of Hon'ble President Shri. Bipindada Kolhe Saheb, we became the first Sugar Factory in Maharashtra to produce Ethanol directly from ESJ, ushering in a new era of agricultural-industrial integration.",
-    stats: [
-      { label: "Years of Leadership", value: "40+" },
-      { label: "Farmer Members", value: "50,000+" }
-    ]
+    description: "Under Hon'ble President Shri. Bipindada Kolhe Saheb, Sanjivani became Maharashtra's first sugar factory to produce ethanol directly from ESJ — farm-to-industrial integration at scale.",
   },
   {
     icon: "Leaf",
     title: "Circular Economy Champion",
-    description: "Integrated Bio-Gas → Sulphur Recovery → Co-Generation ecosystem converts 100% of organic waste residues into clean energy, process heat, and power — achieving near-zero organic waste discharge across the chemical complex.",
-    stats: [
-      { label: "Bio-Gas Utilization", value: "100%" },
-      { label: "CO₂ Offset/yr", value: "25,000 T" }
-    ]
+    description: "Integrated Bio-Gas → Sulphur Recovery → Co-Generation ecosystem converts 100% of organic residues into clean energy, process heat and exportable power — near-zero organic discard.",
   },
   {
     icon: "Factory",
     title: "Largest Acetic Anhydride Capacity (Cooperative Sector)",
-    description: "One of the largest integrated Acetic Anhydride manufacturing facilities in India's cooperative sector, supplying to 200+ pharma and specialty chemical clients with consistent, pharma-grade output.",
-    stats: [
-      { label: "Active Clients", value: "200+" },
-      { label: "Export Countries", value: "8" }
-    ]
+    description: "One of India's cooperative sector's largest integrated Acetic Anhydride facilities. Supplies 200+ pharma and specialty chemical clients with consistent, pharma-grade validated output.",
   },
   {
     icon: "Zap",
     title: "Grid Power Contributor",
-    description: "During the sugarcane crushing season, our 12 MW Co-Generation plant exports surplus renewable bagasse-based power to the MSEDCL grid, powering thousands of rural households and supporting the state's renewable purchase obligations.",
-    stats: [
-      { label: "Installed Capacity", value: "12 MW" },
-      { label: "Homes Powered (Seasonal)", value: "10,000+" }
-    ]
+    description: "During sugarcane crushing season, our 12 MW Co-Gen plant exports surplus renewable bagasse-based power to MSEDCL — powering 10,000+ rural households and meeting state RPO targets.",
   }
 ];
 

@@ -20,10 +20,9 @@ const Plants = () => {
       </Helmet>
 
       <PageHeader
-        title="7 specialized plants. One integrated, circular campus."
-        subtitle="Every plant on the 200+ acre Shingnapur campus is engineered for a specific chemistry — and interconnected for shared feedstock, shared energy, and shared waste recovery."
-        breadcrumbItems={[{ label: 'Manufacturing Plants' }]}
-        accent="blue"
+        title="7 specialized plants. One integrated 200+ acre campus."
+        subtitle="Every Shingnapur campus plant is engineered for a specific chemistry — and interconnected for shared feedstock, shared energy and shared waste recovery."
+        breadcrumbItems={[{ label: 'Plants' }]}
         bgImage={defaultImages.pageHeaders.plants}
       />
 

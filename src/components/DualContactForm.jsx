@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Building2, Users, Briefcase, Handshake } from 'lucide-react';
+import { Building2, Users } from 'lucide-react';
 import EnquiryForm from './EnquiryForm';
 
 const DualContactForm = ({
@@ -70,22 +70,6 @@ const DualContactForm = ({
           )}
         </motion.div>
       </AnimatePresence>
-
-      <div className="mt-8 pt-7 border-t border-neutral-light grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {[
-          { I: Briefcase, k: 'Quotes', v: 'Within 24 hours' },
-          { I: Handshake, k: 'Audits', v: 'Plant tours available' },
-          { I: Building2, k: 'Logistics', v: 'Truck · Rail · Container' },
-        ].map(({ I, k, v }) => (
-          <div key={k} className="p-4 rounded-2xl bg-neutral-light/60">
-            <div className="w-9 h-9 rounded-xl bg-industrial-green/10 flex items-center justify-center text-industrial-green mb-2.5">
-              <I size={16} />
-            </div>
-            <p className="text-[11px] uppercase tracking-wider font-bold text-neutral-dark/45">{k}</p>
-            <p className="text-sm font-semibold text-neutral-dark mt-0.5">{v}</p>
-          </div>
-        ))}
-      </div>
     </div>
   );
 };

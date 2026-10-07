@@ -30,10 +30,10 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
         scrolled
-          ? 'bg-white/90 backdrop-blur-xl shadow-sm border-b border-neutral-light'
-          : 'bg-transparent'
+          ? 'bg-white/90 backdrop-blur-xl shadow-sm border-b border-neutral-light opacity-100 translate-y-0 pointer-events-auto'
+          : 'bg-transparent opacity-0 -translate-y-3 pointer-events-none'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">

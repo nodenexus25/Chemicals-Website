@@ -45,7 +45,7 @@ const Programs = () => {
       <PageHeader
         eyebrow="Programs"
         title="Initiatives that drive long-term value for farmers, buyers, and the planet."
-        subtitle="Technology programs, sustainability roadmaps, farmer extension, R&D scale-up, and long-term B2B supply partnerships — each program tracked, audited, and managed with dedicated cross-functional teams."
+        subtitle="Technology, sustainability, farmer extension, R&D scale-up and long-term B2B partnerships. Dedicated cross-functional teams track every program end-to-end."
         breadcrumbItems={[{ label: 'Programs & Initiatives' }]}
         bgImage={defaultImages.pageHeaders.products}
         accent="blue"

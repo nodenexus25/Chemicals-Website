@@ -6,8 +6,8 @@ import CTAButton from '../components/shared/CTAButton';
 import { plants } from '../data/plants';
 import { products } from '../data/products';
 import {
-  Leaf, Droplets, Flame, Zap, Factory,
-  ArrowRight, CheckCircle2, Recycle, Globe2, Trees
+  Leaf, Droplets, Flame, Zap,
+  ArrowRight, CheckCircle2, Recycle
 } from 'lucide-react';
 
 const pillars = [
@@ -17,10 +17,10 @@ const pillars = [
     title: 'ESJ-to-Ethanol — Renewable from the Root',
     color: 'from-cyan-500 to-steel-blue',
     points: [
-      'Maharashtra\'s 1st cooperative to produce ethanol directly from Enzymatic Sugar Juice',
-      'Bypasses sugar crystallization — higher sugar recovery, lower energy per litre',
-      'Supports India\'s EBP (Ethanol Blended Petrol) national program',
-      'Produces both Anhydrous (99.9%) and Rectified (96.4%) Spirit grades',
+      "Maharashtra's 1st cooperative producing ethanol directly from Enzymatic Sugar Juice",
+      'Bypasses sugar crystallization — higher recovery, lower energy per litre',
+      "Supports India's EBP Ethanol Blended Petrol national program",
+      'Produces Anhydrous 99.9% and Rectified 96.4% Spirit grades',
     ],
   },
   {
@@ -30,9 +30,9 @@ const pillars = [
     color: 'from-amber-500 to-accent-amber',
     points: [
       '100% of distillery spent wash & press mud anaerobically digested',
-      'Raw bio-gas sweetened via amine scrubbing & Sulphur Recovery Division',
-      'Clean methane fuels Acetic Anhydride plant & Co-Gen engines',
-      'Eliminates organic waste landfill disposal entirely',
+      'Raw bio-gas sweetened via amine scrubbing + Sulphur Recovery Division',
+      'Clean methane fuels Acetic Anhydride plant + Co-Gen engines',
+      'Zero organic waste to landfill',
     ],
   },
   {
@@ -41,10 +41,10 @@ const pillars = [
     title: 'Co-Generation — Power with Purpose',
     color: 'from-sky-500 to-indigo-600',
     points: [
-      '12 MW CHP plant — bagasse (seasonal) + bio-gas (year-round) + coal blend',
-      'Exhaust steam used for ethanol distillation & chemical process heat',
-      'Surplus electricity exported to MSEDCL grid during crushing season',
-      '10,000+ rural households powered via renewable export',
+      '12 MW CHP plant — bagasse (seasonal) + bio-gas + coal blend',
+      'Exhaust steam heats ethanol distillation & chemical processes',
+      'Seasonal surplus electricity exported to MSEDCL grid',
+      'Powers 10,000+ rural households via renewable export',
     ],
   },
   {
@@ -53,19 +53,12 @@ const pillars = [
     title: 'Sulphur Recovery — Closing the Loop',
     color: 'from-industrial-green to-emerald-600',
     points: [
-      'H₂S removed from bio-gas prevents corrosion & extends engine life',
-      'Recovered sulphur processed into commercial-grade elemental sulphur',
-      'Enables CPCB compliance for stack emissions',
-      'Every tonne of recovered sulphur avoids new mining demand',
+      'H₂S removal from bio-gas prevents corrosion & extends engine life',
+      'Recovered sulphur processed into commercial elemental grade',
+      'Meets CPCB stack emission compliance',
+      'Every recovered tonne avoids virgin mining demand',
     ],
   },
-];
-
-const metrics = [
-  { icon: Globe2, v: '25,000+', l: 'Tonnes CO₂ Offset / yr' },
-  { icon: Leaf, v: '100%', l: 'Organic Residues Reused' },
-  { icon: Trees, v: '125,000+', l: 'Tree Equivalents Planted' },
-  { icon: Factory, v: 'ZLD', l: 'Zero Liquid Discharge' },
 ];
 
 const Sustainability = () => {
@@ -79,7 +72,7 @@ const Sustainability = () => {
 
       <PageHeader
         title="A chemical complex that returns more than it takes."
-        subtitle="Our 4-pillar Circular Bio-Energy Model turns sugarcane into ethanol, residues into bio-gas, bio-gas into electricity — and every waste stream back into productive value. Maharashtra's integrated benchmark for industrial sustainability."
+        subtitle="4-pillar Circular Bio-Energy Model: sugarcane → ethanol, residues → bio-gas, bio-gas → electricity. Maharashtra's integrated industrial sustainability benchmark."
         breadcrumbItems={[{ label: 'Sustainability' }]}
         accent="green"
         bgImage={defaultImages.pageHeaders.sustainability}
@@ -87,35 +80,6 @@ const Sustainability = () => {
 
       <section className="py-20 md:py-28 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 mb-20 md:mb-28">
-            {metrics.map((m, i) => {
-              const Icon = m.icon;
-              return (
-                <motion.div
-                  key={m.l}
-                  initial={{ opacity: 0, y: 22 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                  className="group relative p-6 md:p-8 rounded-3xl bg-white border border-neutral-light shadow-card hover:shadow-card-hover transition-all duration-500 hover:-translate-y-1 overflow-hidden"
-                >
-                  <div className="absolute top-0 right-0 w-36 h-36 rounded-full bg-gradient-to-br from-industrial-green/8 to-accent-amber/8 opacity-60 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-industrial-green to-steel-blue flex items-center justify-center text-white mb-5 group-hover:scale-105 transition-transform duration-300">
-                      <Icon size={22} strokeWidth={2.1} />
-                    </div>
-                    <p className="text-3xl md:text-4xl font-black tracking-tighter bg-gradient-to-br from-industrial-green to-steel-blue bg-clip-text text-transparent">
-                      {m.v}
-                    </p>
-                    <p className="text-[11px] md:text-xs uppercase tracking-wider text-neutral-dark/45 font-bold mt-1.5 leading-tight">
-                      {m.l}
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-
           <div className="max-w-3xl mb-14 md:mb-16">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-industrial-green/10 text-industrial-green text-xs font-bold tracking-wider uppercase mb-5">
               <Leaf size={12} />
@@ -219,53 +183,12 @@ const Sustainability = () => {
                 The Sustainability 2.0 roadmap commits the Chemical Division to a 42% reduction in scope 1 & 2 emissions
                 by 2030 and net-zero process emissions by 2038 — fully aligned with India's Panchamrit climate pledges.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-                {[
-                  { v: '-42%', l: 'Emissions by 2030' },
-                  { v: '50%', l: 'Renewable Energy' },
-                  { v: 'ZLD', l: 'Zero Liquid Discharge' },
-                ].map((s, i) => (
-                  <div key={i} className="p-5 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10">
-                    <p className="text-2xl md:text-3xl font-black tracking-tight text-accent-amber">{s.v}</p>
-                    <p className="text-[11px] uppercase tracking-wider text-white/60 font-semibold mt-1 leading-tight">{s.l}</p>
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="lg:col-span-6">
               <div className="p-7 md:p-9 rounded-[2rem] bg-white/5 backdrop-blur-2xl border border-white/10 shadow-2xl">
                 <h3 className="text-xl md:text-2xl font-bold mb-6">ESG Focus Areas · FY 2025–2030</h3>
-                <div className="space-y-4">
-                  {[
-                    { k: 'Solar Rooftop Addition', v: 75, l: '7.5 MW Target' },
-                    { k: 'Process Steam Electrification', v: 30, l: '30% by 2028' },
-                    { k: 'Carbon Accounting (ISO 14064)', v: 100, l: 'Full Plant Coverage' },
-                    { k: 'Farmer Sustainable Cane Program', v: 60, l: '60% Members Enrolled' },
-                  ].map((bar, i) => (
-                    <div key={i}>
-                      <div className="flex items-center justify-between mb-2">
-                        <p className="text-sm font-semibold text-white/90">{bar.k}</p>
-                        <p className="text-xs text-accent-amber font-bold">{bar.l}</p>
-                      </div>
-                      <div className="h-2.5 rounded-full bg-white/10 overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${bar.v}%` }}
-                          viewport={{ once: true, margin: '-40px' }}
-                          transition={{ duration: 1.1, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                          className={`h-full rounded-full bg-gradient-to-r ${
-                            i === 0 ? 'from-accent-amber to-amber-300' :
-                            i === 1 ? 'from-sky-400 to-indigo-400' :
-                            i === 2 ? 'from-industrial-green to-emerald-400' :
-                            'from-steel-blue to-cyan-400'
-                          }`}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+                <div className="mt-2 pt-2 flex flex-wrap items-center justify-between gap-4">
                   <p className="text-sm text-white/65 max-w-md">
                     Download the complete ESG & Sustainability Report (PDF · 2.1 MB) for audited scope 1-3 emissions, water stewardship & community impact data.
                   </p>

@@ -76,25 +76,9 @@ const LeadershipQuote = () => {
             </div>
 
             <p className="mt-8 md:mt-10 text-base md:text-lg text-neutral-dark/65 leading-relaxed max-w-2xl">
-              Under his visionary leadership, Sanjivani became Maharashtra's first cooperative sugar factory to
-              manufacture ethanol directly from Enzymatic Sugar Juice — a breakthrough that linked farm prosperity to
-              national energy security and positioned Sanjivani Chemical Division as a benchmark for sustainable
-              industrial cooperatives across India.
+              Under his leadership, Sanjivani became Maharashtra's first cooperative sugar factory to manufacture ethanol
+              directly from Enzymatic Sugar Juice — linking farm prosperity to national energy security.
             </p>
-
-            <div className="mt-10 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 border-t border-neutral-light pt-8 md:pt-10">
-              {[
-                { v: '50K+', l: 'Farmer Members' },
-                { v: '1985', l: 'Division Founded' },
-                { v: '7', l: 'Specialized Plants' },
-                { v: '8+', l: 'Export Markets' },
-              ].map((s, i) => (
-                <div key={i} className="space-y-1">
-                  <p className="text-2xl md:text-3xl font-black tracking-tight bg-gradient-to-br from-industrial-green to-steel-blue bg-clip-text text-transparent">{s.v}</p>
-                  <p className="text-[11px] uppercase tracking-wider text-neutral-dark/45 font-semibold leading-tight">{s.l}</p>
-                </div>
-              ))}
-            </div>
 
             <div className="mt-10 md:mt-12 flex flex-wrap items-center gap-4">
               <CTAButton to="/about" variant="primaryGreen" size="md">
