@@ -38,15 +38,18 @@ const Navbar = () => {
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-industrial-green to-steel-blue flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
-            <span className="text-white font-bold text-lg tracking-tight">S</span>
+          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-industrial-green to-steel-blue flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 shrink-0">
+            <span className="text-white font-bold text-lg tracking-tight">A</span>
           </div>
           <div className="flex flex-col leading-tight">
             <span className={`font-bold text-base tracking-tight transition-colors duration-300 ${scrolled ? 'text-neutral-dark' : 'text-white'}`}>
               Sanjivani Chemicals
             </span>
+            <span className={`font-semibold text-[11px] tracking-tight transition-colors duration-300 ${scrolled ? 'text-neutral-dark/85' : 'text-white/90'} mt-[1px]`}>
+              Sanjivani Brand
+            </span>
             <span className={`text-[10px] tracking-wide font-medium transition-colors duration-300 ${scrolled ? 'text-industrial-green' : 'text-accent-amber'}`}>
-              Subsidiary of Sanjivani Group
+              Since · 1962
             </span>
           </div>
         </Link>
